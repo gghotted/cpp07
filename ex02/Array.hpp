@@ -1,12 +1,18 @@
 #ifndef ARRAY_HPP
 #define ARRAY_HPP
 
-#include <stdexcept>
+#include <exception>
 
 template <class T>
 class Array
 {
 private:
+  class OutOfRangeException : public std::exception
+  {
+    public:
+      const char* what() const throw() { return "out of range"; };
+  };
+
   T* arr;
   unsigned int _size;
 public:
@@ -44,13 +50,13 @@ public:
   T& operator[](unsigned int n)
   {
     if (n >= _size)
-      throw std::out_of_range("out of range\n");
+      throw OutOfRangeException();
     return arr[n];
   }
   const T& operator[](unsigned int n) const
   {
     if (n >= _size)
-      throw std::out_of_range("out of range\n");
+      throw OutOfRangeException();
     return arr[n];
   }
   unsigned int size(void) const { return _size; }
