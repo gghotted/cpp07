@@ -3,10 +3,10 @@
 
 #include <iostream>
 
-template<class Arr, class Size, class Fnc>
-void iter(Arr *arr, Size size, Fnc* fnc)
+template<class Arr, class Fnc>
+void iter(Arr *arr, size_t size, Fnc* fnc)
 {
-  for (int i = 0; i < size; i++)
+  for (size_t i = 0; i < size; i++)
     fnc(arr[i]);
 }
 
