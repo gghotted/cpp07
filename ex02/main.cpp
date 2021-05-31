@@ -35,7 +35,7 @@ void testString()
     std::cout << sarr[i] << ',';
   std::cout << '\n';
 
-  sarr[0] = "jiholee", sarr[1] = "seoul", sarr[2] = "gypark";
+  sarr[0] = "42", sarr[1] = "seoul", sarr[2] = "gypark";
   for (int i = 0; i < 3; i++)
     std::cout << sarr[i] << ' ';
   std::cout << '\n';
